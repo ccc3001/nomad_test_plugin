@@ -2,12 +2,11 @@ from typing import TYPE_CHECKING
 
 from nomad.config import config
 from nomad.parsing.parser import MatchingParser
+from nomad.datamodel.metainfo.workflow import Workflow
 
 if TYPE_CHECKING:
     from nomad.datamodel.datamodel import EntryArchive
     from structlog.stdlib import BoundLogger
-
-# from nomad.datamodel.metainfo.workflow import Workflow
 
 configuration = config.get_plugin_entry_point(
     'nomad_plugin_test.parsers:parser_entry_point'
@@ -27,4 +26,4 @@ class NewParser(MatchingParser):
         #archive.data.comment = "test"
         logger.info('NewParser.parse', parameter=configuration.parameter)
         logger.warn("some warning")
-        # archive.workflow2 = Workflow(name='test')
+        archive.workflow2 = Workflow(name='test')
