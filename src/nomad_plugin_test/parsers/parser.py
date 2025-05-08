@@ -1,7 +1,6 @@
 from typing import TYPE_CHECKING
 
 from nomad.config import config
-from nomad.datamodel.metainfo.workflow import Workflow
 from nomad.parsing.parser import MatchingParser
 
 if TYPE_CHECKING:
@@ -12,6 +11,8 @@ configuration = config.get_plugin_entry_point(
     'nomad_plugin_test.parsers:parser_entry_point'
 )
 
+from nomad.datamodel.datamodel import EntryArchive
+from nomad.parsing import MatchingParser
 
 class NewParser(MatchingParser):
     def parse(
