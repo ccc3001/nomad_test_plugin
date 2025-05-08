@@ -12,7 +12,6 @@ configuration = config.get_plugin_entry_point(
 )
 
 from nomad.datamodel.datamodel import EntryArchive
-from nomad.parsing import MatchingParser
 
 class NewParser(MatchingParser):
     def parse(
