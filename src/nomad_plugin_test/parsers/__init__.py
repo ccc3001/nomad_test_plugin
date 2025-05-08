@@ -8,7 +8,7 @@ class NewParserEntryPoint(ParserEntryPoint):
     def load(self):
         from nomad_plugin_test.parsers.parser import NewParser
 
-        return NewParser(**self.dict())
+        return NewParser(**self.model_dump())
 
 
 parser_entry_point = NewParserEntryPoint(
