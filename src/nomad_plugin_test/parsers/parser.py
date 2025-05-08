@@ -20,16 +20,16 @@ configuration = config.get_plugin_entry_point(
 
 
 class NewParser(MatchingParser):
-    mainfile_name_re = r'.*'  # This ensures the parser triggers for all files
+   
     def parse(
         self,
         mainfile: str,
-        archive: 'EntryArchive',
+        archive: EntryArchive,
         logger: 'BoundLogger',
         child_archives: dict[str, 'EntryArchive'] = None,
     ) -> None:
         logger.info("MyParser is working!")
-        archive.metadata.comment = "test"
+        archive.data.comment = "test"
         logger.info('NewParser.parse', parameter=configuration.parameter)
-
-        archive.workflow2 = Workflow(name='test')
+        logger.warn("some warning")
+        #archive.workflow2 = Workflow(name='test')
