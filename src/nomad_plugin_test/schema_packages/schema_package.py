@@ -25,7 +25,10 @@ class NewSchemaPackage(Schema):
     def normalize(self, archive: 'EntryArchive', logger: 'BoundLogger') -> None:
         super().normalize(archive, logger)
         logger.info('NewSchema.normalize', parameter=configuration.parameter)
-        self.message = f'Hello !'#{self.name}
+        if self.name:
+            self.message = f'Hello {self.name}!'
+        else:
+            self.message = "Hello, unnamed package!"
 
 
 m_package.__init_metainfo__()
