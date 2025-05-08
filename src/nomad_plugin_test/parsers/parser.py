@@ -21,7 +21,5 @@ class NewParser(MatchingParser):
         logger: "BoundLogger",
     ) -> None:
         logger.info("MyParser is working!")
-       
-        logger.info('NewParser.parse', parameter=configuration.parameter)
-        logger.warn("some warning")
+
         
