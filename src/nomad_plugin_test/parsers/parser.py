@@ -20,6 +20,7 @@ configuration = config.get_plugin_entry_point(
 
 
 class NewParser(MatchingParser):
+    mainfile_name_re = r'.*'  # This ensures the parser triggers for all files
     def parse(
         self,
         mainfile: str,
