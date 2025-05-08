@@ -24,7 +24,7 @@ class NewParser(MatchingParser):
     def parse(
         self,
         mainfile: str,
-        archive: EntryArchive,
+        archive: 'EntryArchive',
         logger: 'BoundLogger',
         child_archives: dict[str, 'EntryArchive'] = None,
     ) -> None:
