@@ -8,11 +8,11 @@ class NewParserEntryPoint(ParserEntryPoint):
     def load(self):
         from nomad_plugin_test.parsers.parser import NewParser
 
-        return NewParser(**self.model_dump())
+        return NewParser(**self.dict())
 
 
 parser_entry_point = NewParserEntryPoint(
     name='NewParser',
     description='New parser entry point configuration.',
-    mainfile_name_re = r'.*',
+    mainfile_name_re = r'.+\.nxs',
 )
