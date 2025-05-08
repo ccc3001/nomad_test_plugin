@@ -23,7 +23,7 @@ class NewParser(MatchingParser):
         child_archives: dict[str, 'EntryArchive'] = None,
     ) -> None:
         logger.info("MyParser is working!")
-        archive.data.comment = "test"
+        archive.metadata.comment = "test"
         logger.info('NewParser.parse', parameter=configuration.parameter)
         logger.warn("some warning")
         # archive.workflow2 = Workflow(name='test')
