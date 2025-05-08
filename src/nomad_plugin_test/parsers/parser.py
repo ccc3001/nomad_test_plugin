@@ -17,16 +17,11 @@ class NewParser(MatchingParser):
     def parse(
         self,
         mainfile: str,
-        archive: 'EntryArchive',
-        logger: 'BoundLogger',
-        child_archives: dict[str, 'EntryArchive'] = None,
+        archive: EntryArchive,
+        logger: "BoundLogger",
     ) -> None:
         logger.info("MyParser is working!")
-        # archive.data = EntryData()
-        # archive.data.comment = "test"
+       
         logger.info('NewParser.parse', parameter=configuration.parameter)
         logger.warn("some warning")
-        if archive.workflow2 is not None:
-            logger.info(f"Workflow name: {archive.workflow2.name}")
-        else:
-            logger.error("Workflow2 is not initialized.")
+        
